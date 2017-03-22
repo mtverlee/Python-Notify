@@ -15,6 +15,8 @@ import httplib
 import urllib
 import smtplib
 from time import strftime
+import better_exceptions
+better_exceptions.MAX_LENGTH = None
 
 
 """ Functions. """
