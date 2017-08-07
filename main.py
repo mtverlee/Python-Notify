@@ -88,14 +88,3 @@ def sendEmail(recipient, subject, text, emailUsername, emailPassword):
         print('Encountered exception - ' + e + '.')
         pass
     server.quit()
-
-def sendDiscordWebook(url, message, avatar_url):
-    headers = {
-        "Content-Type": "application/json"
-    }
-    data = json.dumps({
-        "content": str(message)
-        "avatar_url": str(avatar_url)
-    })
-    r = requests.post(url, headers=headers, data=data)
-    print(r.status_code, r.reason)
