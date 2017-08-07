@@ -89,7 +89,7 @@ def sendEmail(recipient, subject, text, emailUsername, emailPassword):
         pass
     server.quit()
 
-def sendPostRequest(url, message, avatar_url):
+def sendDiscordWebook(url, message, avatar_url):
     headers = {
         "Content-Type": "application/json"
     }

@@ -27,3 +27,7 @@ To send an email:
 ```
 notifications.sendEmail(recipient, subject, text, emailUsername, emailPassword)
 ```
+To send a Discord POST:
+```
+notifications.sendDiscordWebhook(url, message, avatar_url)
+```
