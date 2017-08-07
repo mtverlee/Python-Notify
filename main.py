@@ -48,11 +48,11 @@ def sendFBMessage(token, recipient, message):
             "id": recipient
         },
         "message": {
-            "text": message
+            "text": str(message)
         }
     })
     r = requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
-    print(r.status_code)
+    print(r.status_code, r.reason)
 
 def sendPushoverNotification(appToken, userToken, message, title):
     conn = httplib.HTTPSConnection("api.pushover.net:443")
@@ -88,3 +88,14 @@ def sendEmail(recipient, subject, text, emailUsername, emailPassword):
         print('Encountered exception - ' + e + '.')
         pass
     server.quit()
+
+def sendPostRequest(url, message, avatar_url):
+    headers = {
+        "Content-Type": "application/json"
+    }
+    data = json.dumps({
+        "content": str(message)
+        "avatar_url": str(avatar_url)
+    })
+    r = requests.post(url, headers=headers, data=data)
+    print(r.status_code, r.reason)
