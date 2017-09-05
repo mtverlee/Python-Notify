@@ -63,6 +63,8 @@ def sendPushoverNotification(appToken, userToken, message, title, priority):
         "message": message,
         "title": title,
         "priority": priority,
+        "retry": 300
+        "expire": 3600
     }), { "Content-type": "application/x-www-form-urlencoded" })
     print(conn.getresponse())
 
