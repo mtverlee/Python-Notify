@@ -54,7 +54,7 @@ def sendFBMessage(token, recipient, message):
     r = requests.post("https://graph.facebook.com/v2.6/me/messages", params=params, headers=headers, data=data)
     print(r.status_code, r.reason)
 
-def sendPushoverNotification(appToken, userToken, message, title):
+def sendPushoverNotification(appToken, userToken, message, title, priority):
     conn = httplib.HTTPSConnection("api.pushover.net:443")
     conn.request("POST", "/1/messages.json",
     urllib.urlencode({
@@ -62,6 +62,7 @@ def sendPushoverNotification(appToken, userToken, message, title):
         "user": userToken,
         "message": message,
         "title": title,
+        "priority": priority,
     }), { "Content-type": "application/x-www-form-urlencoded" })
     print(conn.getresponse())
 
