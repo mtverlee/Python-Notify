@@ -55,6 +55,8 @@ def sendFBMessage(token, recipient, message):
     print(r.status_code, r.reason)
 
 def sendPushoverNotification(appToken, userToken, message, title, priority):
+    if priority == None:
+        priority = 0
     conn = httplib.HTTPSConnection("api.pushover.net:443")
     conn.request("POST", "/1/messages.json",
     urllib.urlencode({
