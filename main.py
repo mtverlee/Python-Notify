@@ -91,3 +91,14 @@ def sendEmail(recipient, subject, text, emailUsername, emailPassword):
         print('Encountered exception - ' + e + '.')
         pass
     server.quit()
+
+def sendDiscordWebhook(url, username, avatar_url, content):
+    headers = {
+        "Content-Type" : "application/json"
+    }
+    data = {
+        "username": str(username),
+        "avatar_url": str(avatar_url),
+        "content": str(content)
+    }
+    r = requests.post(str(url), json=data, headers=headers)
