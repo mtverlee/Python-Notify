@@ -32,8 +32,6 @@ import httplib
 import urllib
 import smtplib
 from time import strftime
-import better_exceptions
-export BETTER_EXCEPTIONS=1
 
 def sendFBMessage(token, recipient, message):
     params = {
