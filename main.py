@@ -33,8 +33,7 @@ import urllib
 import smtplib
 from time import strftime
 import better_exceptions
-better_exceptions.MAX_LENGTH = None
-
+export BETTER_EXCEPTIONS=1
 
 def sendFBMessage(token, recipient, message):
     params = {
