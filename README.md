@@ -21,7 +21,7 @@ notifications.sendFBMessage(token, recipient, message)
 ```
 To send a Pushover notification:
 ```
-notifications.sendPushoverNotification(appToken, userToken, message, title)
+notifications.sendPushoverNotification(appToken, userToken, message, title, priority)
 ```
 To send an email:
 ```
