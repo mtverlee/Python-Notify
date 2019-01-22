@@ -6,9 +6,16 @@ Currently supports:
 - Gmail
 - Discord Webhooks
 
-## Use:
+## Usage:
+### Installation:
 ```
 git submodule add -f https://gitub.com/mtverlee/pythonNotify.git notifications
+cd notifications
+pip install -r requirements.txt
+```
+
+### Implementation:
+```
 import notifications.main as notifications
 ```
 To send a FB Message:
