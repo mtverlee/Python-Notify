@@ -1,14 +1,10 @@
 # pythonNotify
-Python notification library.
-
-## Requirements:
-- os
-- requests
-- json
-- httplib
-- urllib
-- smtplib
-- time
+Simple Python notification library.
+Currently supports:
+- Facebook Messages
+- Pushover Notifications
+- Gmail
+- Discord Webhooks
 
 ## Use:
 ```
