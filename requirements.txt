@@ -1,2 +1,2 @@
 requests
-sentry-sdk==0.6.8
+sentry-sdk
