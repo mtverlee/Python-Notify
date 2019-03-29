@@ -33,7 +33,7 @@ def sendPushoverNotification(appToken, userToken, message, title, priority):
     try:
         conn = http.client.HTTPSConnection("api.pushover.net:443")
         conn.request("POST", "/1/messages.json",
-        urllib.urlencode({
+        urllib.parse.urlencode({
             "token": appToken,
             "user": userToken,
             "message": message,
