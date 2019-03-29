@@ -1,7 +1,7 @@
 import os
 import requests
 import json
-import httplib
+import http.client
 import urllib
 import smtplib
 from time import strftime
@@ -31,7 +31,7 @@ def sendFBMessage(token, recipient, message):
 
 def sendPushoverNotification(appToken, userToken, message, title, priority):
     try:
-        conn = httplib.HTTPSConnection("api.pushover.net:443")
+        conn = http.client.HTTPSConnection("api.pushover.net:443")
         conn.request("POST", "/1/messages.json",
         urllib.urlencode({
             "token": appToken,
